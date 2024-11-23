@@ -76,46 +76,46 @@
 }
 
 .column.is-four-fifths {
-  width: 80%;
-  max-width: 1200px;
+  width: 160%; /* 从80%增加到160% */
+  max-width: 2400px; /* 从1200px增加到2400px */
   margin: 0 auto;
 }
 
 .row {
   display: flex;
   flex-wrap: wrap;
-  padding: 0 4px;
-  margin-bottom: 8px;
+  padding: 0 8px; /* 增加了一些内边距 */
+  margin-bottom: 16px; /* 增加行间距 */
 }
 
 .gallery {
   flex: 25%;
   max-width: 25%;
-  padding: 0 4px;
+  padding: 0 8px; /* 增加了视频之间的间距 */
   box-sizing: border-box;
 }
 
 .gallery video {
-  margin-top: 8px;
+  margin-top: 16px;
   vertical-align: middle;
   width: 100%;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1600px) { /* 调整响应式断点 */
   .gallery {
     flex: 50%;
     max-width: 50%;
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1200px) {
   .gallery {
     flex: 100%;
     max-width: 100%;
   }
   
   .column.is-four-fifths {
-    width: 95%;
+    width: 190%;
   }
 }
 
