@@ -6,20 +6,32 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <title>HGM</title>
   <style>
+    body {
+      min-width: 1200px;
+      overflow-x: auto;
+    }
+
     .section {
       padding: 3rem 1.5rem;
-      max-width: 1800px; /* 增加到1.5倍 */
+      max-width: 1800px;
       margin: 0 auto;
     }
 
+    .container {
+      width: 150%;
+      max-width: 1800px;
+      margin: 0 auto;
+      transform: translateX(-16%);
+    }
+
     .content {
-      max-width: 1200px; /* 增加到1.5倍 */
+      max-width: 1200px;
       margin: 0 auto;
       text-align: center;
     }
 
     .method-image, .teaser-image {
-      max-width: 1500px; /* 增加到1.5倍 */
+      max-width: 1500px;
       width: 100%;
       height: auto;
       margin: 2rem auto;
@@ -29,9 +41,9 @@
     .video-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 1.5rem; /* 增加间距 */
+      gap: 1.5rem;
       margin: 2rem auto;
-      max-width: 1800px; /* 增加到1.5倍 */
+      max-width: 1800px;
     }
 
     .video-item {
@@ -46,14 +58,14 @@
 
     .comparison-table {
       width: 100%;
-      max-width: 1800px; /* 增加到1.5倍 */
+      max-width: 1800px;
       margin: 2rem auto;
       border-collapse: collapse;
     }
 
     .comparison-table th,
     .comparison-table td {
-      padding: 1.5rem; /* 增加内边距 */
+      padding: 1.5rem;
       text-align: center;
       border: 1px solid #dbdbdb;
     }
@@ -61,16 +73,8 @@
     .comparison-table img,
     .comparison-table video {
       width: 100%;
-      height: 300px; /* 增加到1.5倍 */
+      height: 300px;
       object-fit: cover;
-    }
-
-    /* 调整容器布局以适应更大的内容 */
-    .container {
-      width: 150%;
-      max-width: 1800px;
-      margin: 0 auto;
-      transform: translateX(-16%);
     }
 
     @media (max-width: 1200px) {
@@ -110,12 +114,6 @@
         grid-template-columns: 1fr;
       }
     }
-
-    /* 增加页面整体宽度以容纳更大的内容 */
-    body {
-      min-width: 1200px;
-      overflow-x: auto;
-    }
   </style>
 </head>
 <body>
@@ -135,8 +133,218 @@
         <h2 class="title is-3">Method</h2>
         <img src="img/framework.png" class="method-image" alt="Method framework">
 
-        <!-- [Video grid and comparison table content remains the same...] -->
-        [Previous video grid and comparison table content]
+        <div class="video-grid">
+          <div class="video-item">
+            <video loop autoplay muted playsinline>
+              <source src="./videos/2415_0_5.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="video-item">
+            <video loop autoplay muted playsinline>
+              <source src="./videos/2423_0_5.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="video-item">
+            <video loop autoplay muted playsinline>
+              <source src="./videos/2432_0_5.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="video-item">
+            <video loop autoplay muted playsinline>
+              <source src="./videos/2442_0_5.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="video-item">
+            <video loop autoplay muted playsinline>
+              <source src="./videos/0504_0_5.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="video-item">
+            <video loop autoplay muted playsinline>
+              <source src="./videos/0506_0_5.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="video-item">
+            <video loop autoplay muted playsinline>
+              <source src="./videos/0510_0_5.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="video-item">
+            <video loop autoplay muted playsinline>
+              <source src="./videos/0513_0_5.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="video-item">
+            <video loop autoplay muted playsinline>
+              <source src="./videos/0149_00035_09_00061_0_5.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="video-item">
+            <video loop autoplay muted playsinline>
+              <source src="./videos/0214_00052_03_00041_0_5.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="video-item">
+            <video loop autoplay muted playsinline>
+              <source src="./videos/0009_00008_08_00041_0_5.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="video-item">
+            <video loop autoplay muted playsinline>
+              <source src="./videos/0127_00032_01_00041_0_5.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="video-item">
+            <video loop autoplay muted playsinline>
+              <source src="./videos/0072_00022_04_00001_0_5.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="video-item">
+            <video loop autoplay muted playsinline>
+              <source src="./videos/0058_00019_04_00141_0_5.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="video-item">
+            <video loop autoplay muted playsinline>
+              <source src="./videos/0228_00054_15_00141_0_5.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="video-item">
+            <video loop autoplay muted playsinline>
+              <source src="./videos/2407_0_5.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Input Image</th>
+              <th>SiTH</th>
+              <th>LGM</th>
+              <th>SIFU</th>
+              <th>SV3D</th>
+              <th>Ours</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><img src="videos/0448_00073_02_00221ori.jpg" alt="Input Image 1"></td>
+              <td>
+                <video autoplay loop muted playsinline>
+                  <source src="videos/0448_00073_02_00221ori_rgba_reco.mp4" type="video/mp4">
+                </video>
+              </td>
+              <td>
+                <video autoplay loop muted playsinline>
+                  <source src="videos/0448_00073_02_00221ori.mp4" type="video/mp4">
+                </video>
+              </td>
+              <td>
+                <video autoplay loop muted playsinline>
+                  <source src="videos/0448_00073_02_00221ori_refine.mp4" type="video/mp4">
+                </video>
+              </td>
+              <td>
+                <video autoplay loop muted playsinline>
+                  <source src="videos/0448_00073_02_00221ori_sv.mp4" type="video/mp4">
+                </video>
+              </td>
+              <td>
+                <video autoplay loop muted playsinline>
+                  <source src="videos/0448_00073_02_00221_0_5.mp4" type="video/mp4">
+                </video>
+              </td>
+            </tr>
+            <tr>
+              <td><img src="videos/0390_00070_03_00101ori.jpg" alt="Input Image 2"></td>
+              <td>
+                <video autoplay loop muted playsinline>
+                  <source src="videos/0390_00070_03_00101ori_rgba_reco.mp4" type="video/mp4">
+                </video>
+              </td>
+              <td>
+                <video autoplay loop muted playsinline>
+                  <source src="videos/0390_00070_03_00101ori.mp4" type="video/mp4">
+                </video>
+              </td>
+              <td>
+                <video autoplay loop muted playsinline>
+                  <source src="videos/0390_00070_03_00101ori_refine.mp4" type="video/mp4">
+                </video>
+              </td>
+              <td>
+                <video autoplay loop muted playsinline>
+                  <source src="videos/0390_00070_03_00101ori_sv.mp4" type="video/mp4">
+                </video>
+              </td>
+              <td>
+                <video autoplay loop muted playsinline>
+                  <source src="videos/0390_00070_03_00101_0_5.mp4" type="video/mp4">
+                </video>
+              </td>
+            </tr>
+            <tr>
+              <td><img src="videos/0083_00023_11_00061ori.jpg" alt="Input Image 3"></td>
+              <td>
+                <video autoplay loop muted playsinline>
+                  <source src="videos/0083_00023_11_00061ori_rgba_reco.mp4" type="video/mp4">
+                </video>
+              </td>
+              <td>
+                <video autoplay loop muted playsinline>
+                  <source src="videos/0083_00023_11_00061ori.mp4" type="video/mp4">
+                </video>
+              </td>
+              <td>
+                <video autoplay loop muted playsinline>
+                  <source src="videos/0083_00023_11_00061ori_refine.mp4" type="video/mp4">
+                </video>
+              </td>
+              <td>
+                <video autoplay loop muted playsinline>
+                  <source src="videos/0083_00023_11_00061ori_sv.mp4" type="video/mp4">
+                </video>
+              </td>
+              <td>
+                <video autoplay loop muted playsinline>
+                  <source src="videos/0083_00023_11_00061_0_5.mp4" type="video/mp4">
+                </video>
+              </td>
+            </tr>
+            <tr>
+              <td><img src="videos/0443_00073_01_00181ori.jpg" alt="Input Image 4"></td>
+              <td>
+                <video autoplay loop muted playsinline>
+                  <source src="videos/0443_00073_01_00181ori_rgba_reco.mp4" type="video/mp4">
+                </video>
+              </td>
+              <td>
+                <video autoplay muted playsinline>
+                  <source src="videos/0443_00073_01_00181ori.mp4" type="video/mp4">
+                </video>
+              </td>
+              <td>
+                <video autoplay loop muted playsinline>
+                  <source src="videos/0443_00073_01_00181ori_refine.mp4" type="video/mp4">
+                </video>
+              </td>
+              <td>
+                <video autoplay loop muted playsinline>
+                  <source src="videos/0443_00073_01_00181ori_sv.mp4" type="video/mp4">
+                </video>
+              </td>
+              <td>
+                <video autoplay loop muted playsinline>
+                  <source src="videos/0443_00073_01_00181_0_5.mp4" type="video/mp4">
+                </video>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
