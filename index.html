@@ -1,547 +1,237 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
   <title>HGM</title>
-  <link rel="icon" href="icon.ico">
   <style>
     .section {
-      padding: 2rem 1.5rem;
-    }
-    .title.is-3 {
-      margin-bottom: 1.5rem;
-    }
-    .subtitle.is-4 {
-      margin-bottom: 1rem;
-    }
-    .content {
-      max-width: 800px;
+      padding: 3rem 1.5rem;
+      max-width: 1200px;
       margin: 0 auto;
     }
 
-    .links-table td {
-      padding: 0.5rem;
-      vertical-align: top;
+    .content {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
     }
-/* 控制比较表格中的图片和视频大小 */
-.links-table img, .links-table video {
-  width: 80%;
-  height: 200px; /* 固定高度为200像素 */
-  object-fit: cover; /* 保持宽高比，裁剪多余部分 */
-}
 
-/* 在移动设备上调整大小 */
-@media (max-width: 768px) {
-  .links-table img, .links-table video {
-    height: 150px; /* 在移动设备上减小高度到150像素 */
-  }
-}
-
-/* 控制顶部大图（teaser image）的大小 */
-.teaser-image {
-  max-width: 800px; /* 最大宽度为800像素 */
-  width: 120%; /* 宽度100%，但不超过max-width */
-  height: auto; /* 高度自动调整，保持宽高比 */
-  margin: 0 auto; /* 居中显示 */
-}
-
-/* 控制方法图（method image）的大小 */
-.method-image {
-  max-width: 1000px; /* 最大宽度为1000像素 */
-  width: 70%; /* 宽度100%，但不超过max-width */
-  height: auto; /* 高度自动调整，保持宽高比 */
-  margin: 0 auto; /* 居中显示 */
-}
-
-
-    
-    .author-list {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.5rem;
+    .method-image, .teaser-image {
+      max-width: 1000px;
+      width: 100%;
+      height: auto;
+      margin: 2rem auto;
+      display: block;
     }
-.hero.teaser {
-  padding: 20px 0;
-}
 
-.columns.is-centered {
-  display: flex;
-  justify-content: center;
-}
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin: 2rem auto;
+      max-width: 1200px;
+    }
 
-.column.is-four-fifths {
-  width: 160%; /* 从80%增加到160% */
-  max-width: 2400px; /* 从1200px增加到2400px */
-  margin: 0 auto;
-}
+    .video-item {
+      width: 100%;
+    }
 
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0 8px; /* 增加了一些内边距 */
-  margin-bottom: 16px; /* 增加行间距 */
-}
+    .video-item video {
+      width: 100%;
+      height: auto;
+      margin-bottom: 1rem;
+    }
 
-.gallery {
-  flex: 25%;
-  max-width: 25%;
-  padding: 0 8px; /* 增加了视频之间的间距 */
-  box-sizing: border-box;
-}
+    .comparison-table {
+      width: 100%;
+      max-width: 1200px;
+      margin: 2rem auto;
+      border-collapse: collapse;
+    }
 
-.gallery video {
-  margin-top: 16px;
-  vertical-align: middle;
-  width: 100%;
-}
+    .comparison-table th,
+    .comparison-table td {
+      padding: 1rem;
+      text-align: center;
+      border: 1px solid #dbdbdb;
+    }
 
-@media screen and (max-width: 1600px) { /* 调整响应式断点 */
-  .gallery {
-    flex: 50%;
-    max-width: 50%;
-  }
-}
+    .comparison-table img,
+    .comparison-table video {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
 
-@media screen and (max-width: 1200px) {
-  .gallery {
-    flex: 100%;
-    max-width: 100%;
-  }
-  
-  .column.is-four-fifths {
-    width: 190%;
-  }
-}
+    @media (max-width: 768px) {
+      .video-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .comparison-table img,
+      .comparison-table video {
+        height: 150px;
+      }
+    }
 
-.container {
-  width: 160%; /* 增加容器宽度 */
-  max-width: 2400px; /* 增加最大宽度 */
-  margin: 0 auto;
-  padding: 0 20px;
-  transform: translateX(-18%); /* 向左移动以居中 */
-}
-
-.mt-6 {
-  margin-top: 3rem;
-}
-
-.table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 1.5rem;
-}
-
-.table th,
-.table td {
-  padding: 1rem;
-  text-align: center;
-  vertical-align: middle;
-  border: 1px solid #dbdbdb;
-}
-
-.table th {
-  background-color: #f5f5f5;
-  font-weight: 600;
-  font-size: 1.1rem;
-}
-
-.image {
-  width: 100%;
-  display: block;
-  position: relative;
-}
-
-.image img,
-.image video {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* 控制视频播放器的样式 */
-video::-webkit-media-controls {
-  background-color: transparent;
-}
-
-video::-webkit-media-controls-panel {
-  background-color: rgba(255, 255, 255, 0.7);
-}
-
-@media screen and (max-width: 1600px) {
-  .container {
-    width: 140%;
-    transform: translateX(-14%);
-  }
-}
-
-@media screen and (max-width: 1200px) {
-  .container {
-    width: 120%;
-    transform: translateX(-8%);
-  }
-}   
-</style>
+    @media (max-width: 480px) {
+      .video-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
-  
 <body>
   <section class="section">
-    <div class="container has-text-centered">
-      <p class="title is-3">HGM: Generalizable Human Gaussians from Single-View Image</p>
-      <p class="subtitle is-4">Anonymous Page</p>
-      
+    <div class="content">
+      <h1 class="title is-3">HGM: Generalizable Human Gaussians from Single-View Image</h1>
+      <h2 class="subtitle is-4">Anonymous Page</h2>
 
-    <div class="container mt-6">
-      <div class="has-text-centered">
-        <img src="img/teaser4.png" class="teaser-image" alt="Teaser image">
-      </div>
-    </div>
-    
- 
-   
-    <div class="container mt-6">
-      <p class="title is-3">Abstract</p>
-      <p class="content is-size-6">
+      <img src="img/teaser4.png" class="teaser-image" alt="Teaser image">
+
+      <h2 class="title is-3">Abstract</h2>
+      <p class="is-size-6">
         In this work, we tackle the task of learning 3D human Gaussians from a single image, focusing on recovering detailed appearance and geometry including unobserved regions. We introduce a single-view generalizable Human Gaussian Model (HGM), which employs a novel generate-then-refine pipeline with the guidance from human body prior and diffusion prior. Our approach uses a ControlNet to refine rendered back-view images from coarse predicted human Gaussians, then uses the refined image along with the input image to reconstruct refined human Gaussians. To mitigate the potential generation of unrealistic human poses and shapes, we incorporate human priors from the SMPL-X model as a dual branch, propagating image features from the SMPL-X volume to the image Gaussians using sparse convolution and attention mechanisms. Given that the initial SMPL-X estimation might be inaccurate, we gradually refine it with our HGM model. We validate our approach on several publicly available datasets. Our method surpasses previous methods in both novel view synthesis and surface reconstruction. Our approach also exhibits strong generalization for cross-dataset evaluation and in-the-wild images.
       </p>
-    </div>
-      
-    <div class="container mt-6">
-      <p class="title is-3 has-text-centered">Method</p>
-      <figure class="image">
-        <img src="img/framework.png" class="method-image" alt="">
-      </figure>
-      <p class="content is-size-6 mt-4">
-      </p>
-    </div>
 
+      <h2 class="title is-3">Method</h2>
+      <img src="img/framework.png" class="method-image" alt="Method framework">
 
-      
-
-<section class="hero teaser">
-  <div class="columns is-centered has-text-centered">
-    <div class="column is-four-fifths">
-      <div class="row">
-        <div class="gallery">
+      <div class="video-grid">
+        <!-- Row 1 -->
+        <div class="video-item">
           <video loop autoplay muted playsinline>
             <source src="./videos/2415_0_5.mp4" type="video/mp4">
           </video>
         </div>
-        <div class="gallery">
+        <div class="video-item">
           <video loop autoplay muted playsinline>
             <source src="./videos/2423_0_5.mp4" type="video/mp4">
           </video>
         </div>
-        <div class="gallery">
+        <div class="video-item">
           <video loop autoplay muted playsinline>
             <source src="./videos/2432_0_5.mp4" type="video/mp4">
           </video>
         </div>
-        <div class="gallery">
+        <div class="video-item">
           <video loop autoplay muted playsinline>
             <source src="./videos/2442_0_5.mp4" type="video/mp4">
           </video>
         </div>
-      </div>
-      <div class="row">
-        <div class="gallery">
+
+        <!-- Row 2 -->
+        <div class="video-item">
           <video loop autoplay muted playsinline>
             <source src="./videos/0504_0_5.mp4" type="video/mp4">
           </video>
         </div>
-        <div class="gallery">
+        <div class="video-item">
           <video loop autoplay muted playsinline>
             <source src="./videos/0506_0_5.mp4" type="video/mp4">
           </video>
         </div>
-        <div class="gallery">
+        <div class="video-item">
           <video loop autoplay muted playsinline>
             <source src="./videos/0510_0_5.mp4" type="video/mp4">
           </video>
         </div>
-        <div class="gallery">
+        <div class="video-item">
           <video loop autoplay muted playsinline>
             <source src="./videos/0513_0_5.mp4" type="video/mp4">
           </video>
         </div>
-      </div>
-      <div class="row">
-        <div class="gallery">
+
+        <!-- Row 3 -->
+        <div class="video-item">
           <video loop autoplay muted playsinline>
             <source src="./videos/0149_00035_09_00061_0_5.mp4" type="video/mp4">
           </video>
         </div>
-        <div class="gallery">
+        <div class="video-item">
           <video loop autoplay muted playsinline>
             <source src="./videos/0214_00052_03_00041_0_5.mp4" type="video/mp4">
           </video>
         </div>
-        <div class="gallery">
+        <div class="video-item">
           <video loop autoplay muted playsinline>
             <source src="./videos/0009_00008_08_00041_0_5.mp4" type="video/mp4">
           </video>
         </div>
-        <div class="gallery">
+        <div class="video-item">
           <video loop autoplay muted playsinline>
             <source src="./videos/0127_00032_01_00041_0_5.mp4" type="video/mp4">
           </video>
         </div>
-      </div>
-      <div class="row">
-        <div class="gallery">
+
+        <!-- Row 4 -->
+        <div class="video-item">
           <video loop autoplay muted playsinline>
             <source src="./videos/0072_00022_04_00001_0_5.mp4" type="video/mp4">
           </video>
         </div>
-        <div class="gallery">
+        <div class="video-item">
           <video loop autoplay muted playsinline>
             <source src="./videos/0058_00019_04_00141_0_5.mp4" type="video/mp4">
           </video>
         </div>
-        <div class="gallery">
+        <div class="video-item">
           <video loop autoplay muted playsinline>
             <source src="./videos/0228_00054_15_00141_0_5.mp4" type="video/mp4">
           </video>
         </div>
-        <div class="gallery">
+        <div class="video-item">
           <video loop autoplay muted playsinline>
             <source src="./videos/2407_0_5.mp4" type="video/mp4">
           </video>
         </div>
       </div>
+
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Input Image</th>
+            <th>SiTH</th>
+            <th>LGM</th>
+            <th>SIFU</th>
+            <th>SV3D</th>
+            <th>Ours</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><img src="videos/0448_00073_02_00221ori.jpg" alt="Input Image 1"></td>
+            <td>
+              <video autoplay loop muted playsinline>
+                <source src="videos/0448_00073_02_00221ori_rgba_reco.mp4" type="video/mp4">
+              </video>
+            </td>
+            <td>
+              <video autoplay loop muted playsinline>
+                <source src="videos/0448_00073_02_00221ori.mp4" type="video/mp4">
+              </video>
+            </td>
+            <td>
+              <video autoplay loop muted playsinline>
+                <source src="videos/0448_00073_02_00221ori_refine.mp4" type="video/mp4">
+              </video>
+            </td>
+            <td>
+              <video autoplay loop muted playsinline>
+                <source src="videos/0448_00073_02_00221ori_sv.mp4" type="video/mp4">
+              </video>
+            </td>
+            <td>
+              <video autoplay loop muted playsinline>
+                <source src="videos/0448_00073_02_00221_0_5.mp4" type="video/mp4">
+              </video>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-  </div>
-</section>
-
-
-      
-   <div class="container mt-6">
-  <table class="table is-fullwidth links-table">
-    <thead>
-      <tr>
-        <th>Input Image</th>
-        <th>SiTH</th>
-        <th>LGM</th>
-        <th>SIFU</th>
-        <th>SV3D</th>
-        <th>Ours</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>
-          <figure class="image">
-            <img src="videos/0448_00073_02_00221ori.jpg" alt="Input Image 1">
-          </figure>
-        </td>
-        <td>
-          <figure class="image">
-            <video autoplay loop muted controls>
-              <source src="videos/0448_00073_02_00221ori_rgba_reco.mp4" type="video/mp4">
-            </video>
-          </figure>
-        </td>
-        <td>
-          <figure class="image">
-            <video autoplay loop muted controls>
-              <source src="videos/0448_00073_02_00221ori.mp4" type="video/mp4">
-            </video>
-          </figure>
-        </td>
-        <td>
-          <figure class="image">
-            <video autoplay loop muted controls>
-              <source src="videos/0448_00073_02_00221ori_refine.mp4" type="video/mp4">
-            </video>
-          </figure>
-        </td>
-        <td>
-          <figure class="image">
-            <video autoplay loop muted controls>
-              <source src="videos/0448_00073_02_00221ori_sv.mp4" type="video/mp4">
-            </video>
-          </figure>
-        </td>
-        <td>
-          <figure class="image">
-            <video autoplay loop muted controls>
-              <source src="videos/0448_00073_02_00221_0_5.mp4" type="video/mp4">
-            </video>
-          </figure>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <figure class="image">
-            <img src="videos/0390_00070_03_00101ori.jpg" alt="Input Image 2">
-          </figure>
-        </td>
-        <td>
-          <figure class="image">
-            <video autoplay loop muted controls>
-              <source src="videos/0390_00070_03_00101ori_rgba_reco.mp4" type="video/mp4">
-            </video>
-          </figure>
-        </td>
-        <td>
-          <figure class="image">
-            <video autoplay loop muted controls>
-              <source src="videos/0390_00070_03_00101ori.mp4" type="video/mp4">
-            </video>
-          </figure>
-        </td>
-        <td>
-          <figure class="image">
-            <video autoplay loop muted controls>
-              <source src="videos/0390_00070_03_00101ori_refine.mp4" type="video/mp4">
-            </video>
-          </figure>
-        </td>
-        <td>
-          <figure class="image">
-            <video autoplay loop muted controls>
-              <source src="videos/0390_00070_03_00101ori_sv.mp4" type="video/mp4">
-            </video>
-          </figure>
-        </td>
-        <td>
-          <figure class="image">
-            <video autoplay loop muted controls>
-              <source src="videos/0390_00070_03_00101_0_5.mp4" type="video/mp4">
-            </video>
-          </figure>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <figure class="image">
-            <img src="videos/0083_00023_11_00061ori.jpg" alt="Input Image 3">
-          </figure>
-        </td>
-        <td>
-          <figure class="image">
-            <video autoplay loop muted controls>
-              <source src="videos/0083_00023_11_00061ori_rgba_reco.mp4" type="video/mp4">
-            </video>
-          </figure>
-        </td>
-        <td>
-          <figure class="image">
-            <video autoplay loop muted controls>
-              <source src="videos/0083_00023_11_00061ori.mp4" type="video/mp4">
-            </video>
-          </figure>
-        </td>
-        <td>
-          <figure class="image">
-            <video autoplay loop muted controls>
-              <source src="videos/0083_00023_11_00061ori_refine.mp4" type="video/mp4">
-            </video>
-          </figure>
-        </td>
-        <td>
-          <figure class="image">
-            <video autoplay loop muted controls>
-              <source src="videos/0083_00023_11_00061ori_sv.mp4" type="video/mp4">
-            </video>
-          </figure>
-        </td>
-        <td>
-          <figure class="image">
-            <video autoplay loop muted controls>
-              <source src="videos/0083_00023_11_00061_0_5.mp4" type="video/mp4">
-            </video>
-          </figure>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <figure class="image">
-            <img src="videos/0443_00073_01_00181ori.jpg" alt="Input Image 4">
-          </figure>
-        </td>
-        <td>
-          <figure class="image">
-            <video autoplay loop muted controls>
-              <source src="videos/0443_00073_01_00181ori_rgba_reco.mp4" type="video/mp4">
-            </video>
-          </figure>
-        </td>
-        <td>
-          <figure class="image">
-            <video autoplay loop muted controls>
-              <source src="videos/0443_00073_01_00181ori.mp4" type="video/mp4">
-            </video>
-          </figure>
-        </td>
-        <td>
-          <figure class="image">
-            <video autoplay loop muted controls>
-              <source src="videos/0443_00073_01_00181ori_refine.mp4" type="video/mp4">
-            </video>
-          </figure>
-        </td>
-        <td>
-          <figure class="image">
-            <video autoplay loop muted controls>
-              <source src="videos/0443_00073_01_00181ori_sv.mp4" type="video/mp4">
-            </video>
-          </figure>
-        </td>
-        <td>
-          <figure class="image">
-            <video autoplay loop muted controls>
-              <source src="videos/0443_00073_01_00181_0_5.mp4" type="video/mp4">
-            </video>
-          </figure>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-  <!-- results (videos) -->
-
-    <!-- 3d model viewer -->
-<!--     <p class="title is-3 mt-5 has-text-centered"> Exported Meshes </p>
-    <div class="level">
-      <div class="level-item">
-        <model-viewer src="meshes/002_gau.glb" style="width: 100%; height: 16.60px;" auto-rotate shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
-      </div>
-      <div class="level-item">
-        <model-viewer src="meshes/pdf3.glb" style="width: 100%; height: 16.60px;" auto-rotate shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
-      </div>
-      <div class="level-item">
-        <model-viewer src="meshes/tea.glb" style="width: 100%; height: 16.60px;" auto-rotate shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
-      </div>
-      <div class="level-item">
-        <model-viewer src="meshes/tea2.glb" style="width: 100%; height: 16.60px;" auto-rotate shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
-      </div>
-    </div>
-    <div class="level">
-      <div class="level-item">
-        <model-viewer src="meshes/0017_000_0178_00041_07_00141_gau.glb" style="width: 100%; height: 16.60px;" auto-rotate shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
-      </div>
-      <div class="level-item">
-        <model-viewer src="meshes/0043_000_0468_00074_03_00061_gau.glb" style="width: 100%; height: 16.60px;" auto-rotate shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
-      </div>
-      <div class="level-item">
-        <model-viewer src="meshes/0048_000_0528_00078_01_00221_gau.glb" style="width: 100%; height: 16.60px;" auto-rotate shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
-      </div>
-      <div class="level-item">
-        <model-viewer src="meshes/0032_000_0372_00069_03_00021_gau.glb" style="width: 100%; height: 16.60px;" auto-rotate shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
-      </div>
-    </div> -->
-
-
-  </div>
-
-
   </section>
 </body>
 </html>
-
