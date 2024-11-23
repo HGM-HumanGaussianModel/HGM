@@ -119,7 +119,73 @@
   }
 }
 
-    
+.container {
+  width: 160%; /* 增加容器宽度 */
+  max-width: 2400px; /* 增加最大宽度 */
+  margin: 0 auto;
+  padding: 0 20px;
+  transform: translateX(-18%); /* 向左移动以居中 */
+}
+
+.mt-6 {
+  margin-top: 3rem;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+}
+
+.table th,
+.table td {
+  padding: 1rem;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid #dbdbdb;
+}
+
+.table th {
+  background-color: #f5f5f5;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.image {
+  width: 100%;
+  display: block;
+  position: relative;
+}
+
+.image img,
+.image video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 控制视频播放器的样式 */
+video::-webkit-media-controls {
+  background-color: transparent;
+}
+
+video::-webkit-media-controls-panel {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+@media screen and (max-width: 1600px) {
+  .container {
+    width: 140%;
+    transform: translateX(-14%);
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .container {
+    width: 120%;
+    transform: translateX(-8%);
+  }
+}   
 </style>
 </head>
   
@@ -252,215 +318,192 @@
 
 
       
-    <div class="container mt-6">
-      <table class="table is-fullwidth links-table">
-        <thead>
-          <tr>
-            <th>Input Image</th>
-            <th>SiTH</th>
-            <th>LGM</th>
-            <th>SIFU</th>
-            <th>SV3D</th>
-            <th>Ours</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              <figure class="image">
-                <img src="videos/0448_00073_02_00221ori.jpg" alt="Input Image 1">
-              </figure>
-            </td>
-            <td>
-              <figure class="image">
-                <video autoplay loop muted controls>
-                  <source src="videos/0448_00073_02_00221ori_rgba_reco.mp4" type="video/mp4">
-                </video>
-              </figure>
-            </td>
-            <td>
-              <figure class="image">
-                <video autoplay loop muted controls>
-                  <source src="videos/0448_00073_02_00221ori.mp4" type="video/mp4">
-                </video>
-              </figure>
-            </td>
-            <td>
-              <figure class="image">
-                <video autoplay loop muted controls>
-                  <source src="videos/0448_00073_02_00221ori_refine.mp4" type="video/mp4">
-                </video>
-              </figure>
-            </td>
-            <td>
-              <figure class="image">
-                <video autoplay loop muted controls>
-                  <source src="videos/0448_00073_02_00221ori_sv.mp4" type="video/mp4">
-                </video>
-              </figure>
-            </td>
-            <td>
-              <figure class="image">
-                <video autoplay loop muted controls>
-                  <source src="videos/0448_00073_02_00221_0_5.mp4" type="video/mp4">
-                </video>
-              </figure>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <figure class="image">
-                <img src="videos/0390_00070_03_00101ori.jpg" alt="Input Image 2">
-              </figure>
-            </td>
-            <td>
-              <figure class="image">
-                <video autoplay loop muted controls>
-                  <source src="videos/0390_00070_03_00101ori_rgba_reco.mp4" type="video/mp4">
-                </video>
-              </figure>
-            </td>
-            <td>
-              <figure class="image">
-                <video autoplay loop muted controls>
-                  <source src="videos/0390_00070_03_00101ori.mp4" type="video/mp4">
-                </video>
-              </figure>
-            </td>
-            <td>
-              <figure class="image">
-                <video autoplay loop muted controls>
-                  <source src="videos/0390_00070_03_00101ori_refine.mp4" type="video/mp4">
-                </video>
-              </figure>
-            </td>
-            <td>
-              <figure class="image">
-                <video autoplay loop muted controls>
-                  <source src="videos/0390_00070_03_00101ori_sv.mp4" type="video/mp4">
-                </video>
-              </figure>
-            </td>
-            <td>
-              <figure class="image">
-                <video autoplay loop muted controls>
-                  <source src="videos/0390_00070_03_00101_0_5.mp4" type="video/mp4">
-                </video>
-              </figure>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <figure class="image">
-                <img src="videos/0083_00023_11_00061ori.jpg" alt="Input Image 3">
-              </figure>
-            </td>
-            <td>
-              <figure class="image">
-                <video autoplay loop muted controls>
-                  <source src="videos/0083_00023_11_00061ori_rgba_reco.mp4" type="video/mp4">
-                </video>
-              </figure>
-            </td>
-            <td>
-              <figure class="image">
-                <video autoplay loop muted controls>
-                  <source src="videos/0083_00023_11_00061ori.mp4" type="video/mp4">
-                </video>
-              </figure>
-            </td>
-            <td>
-              <figure class="image">
-                <video autoplay loop muted controls>
-                  <source src="videos/0083_00023_11_00061ori_refine.mp4" type="video/mp4">
-                </video>
-              </figure>
-            </td>
-            <td>
-              <figure class="image">
-                <video autoplay loop muted controls>
-                  <source src="videos/0083_00023_11_00061ori_sv.mp4" type="video/mp4">
-                </video>
-              </figure>
-            </td>
-            <td>
-              <figure class="image">
-                <video autoplay loop muted controls>
-                  <source src="videos/0083_00023_11_00061_0_5.mp4" type="video/mp4">
-                </video>
-              </figure>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <figure class="image">
-                <img src="videos/0443_00073_01_00181ori.jpg" alt="Input Image 4">
-              </figure>
-            </td>
-            <td>
-              <figure class="image">
-                <video autoplay loop muted controls>
-                  <source src="videos/0443_00073_01_00181ori_rgba_reco.mp4" type="video/mp4">
-                </video>
-              </figure>
-            </td>
-            <td>
-              <figure class="image">
-                <video autoplay loop muted controls>
-                  <source src="videos/0443_00073_01_00181ori.mp4" type="video/mp4">
-                </video>
-              </figure>
-            </td>
-            <td>
-              <figure class="image">
-                <video autoplay loop muted controls>
-                  <source src="videos/0443_00073_01_00181ori_refine.mp4" type="video/mp4">
-                </video>
-              </figure>
-            </td>
-            <td>
-              <figure class="image">
-                <video autoplay loop muted controls>
-                  <source src="videos/0443_00073_01_00181ori_sv.mp4" type="video/mp4">
-                </video>
-              </figure>
-            </td>
-            <td>
-              <figure class="image">
-                <video autoplay loop muted controls>
-                  <source src="videos/0443_00073_01_00181_0_5.mp4" type="video/mp4">
-                </video>
-              </figure>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-</body>
-</html>
+   <div class="container mt-6">
+  <table class="table is-fullwidth links-table">
+    <thead>
+      <tr>
+        <th>Input Image</th>
+        <th>SiTH</th>
+        <th>LGM</th>
+        <th>SIFU</th>
+        <th>SV3D</th>
+        <th>Ours</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <figure class="image">
+            <img src="videos/0448_00073_02_00221ori.jpg" alt="Input Image 1">
+          </figure>
+        </td>
+        <td>
+          <figure class="image">
+            <video autoplay loop muted controls>
+              <source src="videos/0448_00073_02_00221ori_rgba_reco.mp4" type="video/mp4">
+            </video>
+          </figure>
+        </td>
+        <td>
+          <figure class="image">
+            <video autoplay loop muted controls>
+              <source src="videos/0448_00073_02_00221ori.mp4" type="video/mp4">
+            </video>
+          </figure>
+        </td>
+        <td>
+          <figure class="image">
+            <video autoplay loop muted controls>
+              <source src="videos/0448_00073_02_00221ori_refine.mp4" type="video/mp4">
+            </video>
+          </figure>
+        </td>
+        <td>
+          <figure class="image">
+            <video autoplay loop muted controls>
+              <source src="videos/0448_00073_02_00221ori_sv.mp4" type="video/mp4">
+            </video>
+          </figure>
+        </td>
+        <td>
+          <figure class="image">
+            <video autoplay loop muted controls>
+              <source src="videos/0448_00073_02_00221_0_5.mp4" type="video/mp4">
+            </video>
+          </figure>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <figure class="image">
+            <img src="videos/0390_00070_03_00101ori.jpg" alt="Input Image 2">
+          </figure>
+        </td>
+        <td>
+          <figure class="image">
+            <video autoplay loop muted controls>
+              <source src="videos/0390_00070_03_00101ori_rgba_reco.mp4" type="video/mp4">
+            </video>
+          </figure>
+        </td>
+        <td>
+          <figure class="image">
+            <video autoplay loop muted controls>
+              <source src="videos/0390_00070_03_00101ori.mp4" type="video/mp4">
+            </video>
+          </figure>
+        </td>
+        <td>
+          <figure class="image">
+            <video autoplay loop muted controls>
+              <source src="videos/0390_00070_03_00101ori_refine.mp4" type="video/mp4">
+            </video>
+          </figure>
+        </td>
+        <td>
+          <figure class="image">
+            <video autoplay loop muted controls>
+              <source src="videos/0390_00070_03_00101ori_sv.mp4" type="video/mp4">
+            </video>
+          </figure>
+        </td>
+        <td>
+          <figure class="image">
+            <video autoplay loop muted controls>
+              <source src="videos/0390_00070_03_00101_0_5.mp4" type="video/mp4">
+            </video>
+          </figure>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <figure class="image">
+            <img src="videos/0083_00023_11_00061ori.jpg" alt="Input Image 3">
+          </figure>
+        </td>
+        <td>
+          <figure class="image">
+            <video autoplay loop muted controls>
+              <source src="videos/0083_00023_11_00061ori_rgba_reco.mp4" type="video/mp4">
+            </video>
+          </figure>
+        </td>
+        <td>
+          <figure class="image">
+            <video autoplay loop muted controls>
+              <source src="videos/0083_00023_11_00061ori.mp4" type="video/mp4">
+            </video>
+          </figure>
+        </td>
+        <td>
+          <figure class="image">
+            <video autoplay loop muted controls>
+              <source src="videos/0083_00023_11_00061ori_refine.mp4" type="video/mp4">
+            </video>
+          </figure>
+        </td>
+        <td>
+          <figure class="image">
+            <video autoplay loop muted controls>
+              <source src="videos/0083_00023_11_00061ori_sv.mp4" type="video/mp4">
+            </video>
+          </figure>
+        </td>
+        <td>
+          <figure class="image">
+            <video autoplay loop muted controls>
+              <source src="videos/0083_00023_11_00061_0_5.mp4" type="video/mp4">
+            </video>
+          </figure>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <figure class="image">
+            <img src="videos/0443_00073_01_00181ori.jpg" alt="Input Image 4">
+          </figure>
+        </td>
+        <td>
+          <figure class="image">
+            <video autoplay loop muted controls>
+              <source src="videos/0443_00073_01_00181ori_rgba_reco.mp4" type="video/mp4">
+            </video>
+          </figure>
+        </td>
+        <td>
+          <figure class="image">
+            <video autoplay loop muted controls>
+              <source src="videos/0443_00073_01_00181ori.mp4" type="video/mp4">
+            </video>
+          </figure>
+        </td>
+        <td>
+          <figure class="image">
+            <video autoplay loop muted controls>
+              <source src="videos/0443_00073_01_00181ori_refine.mp4" type="video/mp4">
+            </video>
+          </figure>
+        </td>
+        <td>
+          <figure class="image">
+            <video autoplay loop muted controls>
+              <source src="videos/0443_00073_01_00181ori_sv.mp4" type="video/mp4">
+            </video>
+          </figure>
+        </td>
+        <td>
+          <figure class="image">
+            <video autoplay loop muted controls>
+              <source src="videos/0443_00073_01_00181_0_5.mp4" type="video/mp4">
+            </video>
+          </figure>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
   <!-- results (videos) -->
 
-
-<style>
-.video-wrapper {
-  width: 100%;
-  max-width: 2400px; /* 设置最大宽度为70% */
-  margin: 0 auto 1rem;
-}
-
-.video-wrapper video {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-@media (max-width: 991px) {
-  .video-wrapper {
-    max-width: 100%; /* 在小屏幕上占满宽度 */
-  }
-}
-</style>
     <!-- 3d model viewer -->
 <!--     <p class="title is-3 mt-5 has-text-centered"> Exported Meshes </p>
     <div class="level">
